@@ -1,106 +1,154 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
-public class PlayerHealthSystem : MonoBehaviour
+public class Stats : MonoBehaviour
 {
-    public Slider hungerSlider;
-    public Slider thirstSlider;
-    public Slider healthSlider;
+    public int maxHealth = 100;
+    public int maxWater = 100;
+    public int maxFood = 100;
 
-    public float maxHunger = 100f;
-    public float maxThirst = 100f;
-    public float maxHealth = 100f;
-
-    public float hungerDecreaseRate = 1f;
-    public float thirstDecreaseRate = 1f;
-
-    private float currentHunger;
-    private float currentThirst;
     private float currentHealth;
+    private float currentWater;
+    private float currentFood;
 
-    void Start()
+    public Slider healthSlider;
+    public Slider waterSlider;
+    public Slider foodSlider;
+
+    public float healthDegradeRate = 1f;
+    public float waterDegradeRate = 0.5f;
+    public float foodDegradeRate = 0.3f;
+
+    private bool canTakeDamage = true;
+    public float damageCooldown = 0.3f; // Adjust the cooldown time as needed
+    public float zombieDetectionRadius = 5f; // Adjust the detection radius for zombies
+
+    private void Start()
     {
-        currentHunger = maxHunger;
-        currentThirst = maxThirst;
         currentHealth = maxHealth;
+        currentWater = maxWater;
+        currentFood = maxFood;
 
-        UpdateUI();
+        UpdateSliders();
+        InvokeRepeating(nameof(DegradeStats), 1f, 1f);
     }
 
-    void Update()
+    private void Update()
     {
-        // Decrease hunger and thirst over time
-        DecreaseHunger(hungerDecreaseRate * Time.deltaTime);
-        DecreaseThirst(thirstDecreaseRate * Time.deltaTime);
+        DegradeStats();
+        CheckForZombies();
+        HandleDamageCooldown();
+    }
 
-        // Check if hunger or thirst is zero and decrease health accordingly
-        if (currentHunger <= 0 || currentThirst <= 0)
+    private void UpdateSliders()
+    {
+        if (healthSlider != null)
+            healthSlider.value = currentHealth / maxHealth;
+
+        if (waterSlider != null)
+            waterSlider.value = currentWater / maxWater;
+
+        if (foodSlider != null)
+            foodSlider.value = currentFood / maxFood;
+    }
+
+    private void DegradeStats()
+    {
+        DegradeWater();
+        DegradeFood();
+
+        if (currentFood <= 0 || currentWater <= 0)
         {
-            DecreaseHealth(Time.deltaTime);
+            // Degrade health if food or water is zero
+            TakeDamage(healthDegradeRate);
         }
 
-        // Check if health is zero and destroy the player
-        if (currentHealth <= 0)
+        UpdateSliders();
+    }
+
+    private void DegradeWater()
+    {
+        currentWater = Mathf.Clamp(currentWater - waterDegradeRate * Time.deltaTime, 0, maxWater);
+    }
+
+    private void DegradeFood()
+    {
+        currentFood = Mathf.Clamp(currentFood - foodDegradeRate * Time.deltaTime, 0, maxFood);
+    }
+
+    public void AddHealth(float amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        UpdateSliders();
+    }
+
+    public void AddWater(float amount)
+    {
+        currentWater = Mathf.Clamp(currentWater + amount, 0, maxWater);
+        UpdateSliders();
+    }
+
+    public void AddFood(float amount)
+    {
+        currentFood = Mathf.Clamp(currentFood + amount, 0, maxFood);
+        UpdateSliders();
+    }
+
+    public void TakeDamage(float amount)
+    {
+        if (canTakeDamage)
         {
-            DestroyPlayer();
+            currentHealth = Mathf.Clamp(currentHealth - amount, 0, maxHealth);
+
+            if (currentHealth <= 0)
+            {
+                // Destroy the player or trigger game over logic
+                Destroy(gameObject);
+            }
+
+            StartCoroutine(DamageCooldown());
         }
 
-        // Update UI
-        UpdateUI();
+        UpdateSliders();
     }
 
-    public void DecreaseHunger(float value)
+    private IEnumerator DamageCooldown()
     {
-        currentHunger = Mathf.Clamp(currentHunger - value, 0, maxHunger);
+        canTakeDamage = false;
+        yield return new WaitForSeconds(damageCooldown);
+        canTakeDamage = true;
     }
 
-    public void DecreaseThirst(float value)
+
+    private void CheckForZombies()
     {
-        currentThirst = Mathf.Clamp(currentThirst - value, 0, maxThirst);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, zombieDetectionRadius);
+
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("Zombie"))
+            {
+                TakeDamage(10);
+            }
+        }
     }
 
-    public void DecreaseHealth(float value)
+    private void HandleDamageCooldown()
     {
-        currentHealth = Mathf.Clamp(currentHealth - value, 0, maxHealth);
-    }
+        if (!canTakeDamage)
+        {
+            return; // Damage cooldown is active, exit the method
+        }
 
-    public void IncreaseHunger(float value)
-    {
-        currentHunger = Mathf.Clamp(currentHunger + value, 0, maxHunger);
-        UpdateUI();
+        StartCoroutine(DamageCooldown());
     }
-
-    public void IncreaseThirst(float value)
+    
+    private void OnCollisionEnter(Collision collision)
     {
-        currentThirst = Mathf.Clamp(currentThirst + value, 0, maxThirst);
-        UpdateUI();
-    }
-
-    public void IncreaseHealth(float value)
-    {
-        currentHealth = Mathf.Clamp(currentHealth + value, 0, maxHealth);
-        UpdateUI();
-    }
-
-    void DestroyPlayer()
-    {
-        // You can implement any game over logic here
-        Debug.Log("Player destroyed!");
-        // For now, let's just deactivate the player object
-        gameObject.SetActive(false);
-    }
-
-    void UpdateUI()
-    {
-        // Update UI sliders
-        hungerSlider.value = currentHunger / maxHunger;
-        thirstSlider.value = currentThirst / maxThirst;
-        healthSlider.value = currentHealth / maxHealth;
-    }
-
-    // New method to handle damage from zombies
-    public void TakeDamageFromZombie(int damageAmount)
-    {
-        DecreaseHealth(damageAmount);
+        if (collision.collider.CompareTag("Zombie"))
+        {
+            TakeDamage(10);
+        }
     }
 }
