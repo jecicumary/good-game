@@ -8,10 +8,7 @@ public class Item : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            UseItem();
-        }
+        
     }
 
     public void UseItem()
