@@ -45,6 +45,7 @@ public class PlayerHealthSystem : MonoBehaviour
             DestroyPlayer();
         }
 
+        // Update UI
         UpdateUI();
     }
 
@@ -95,5 +96,11 @@ public class PlayerHealthSystem : MonoBehaviour
         hungerSlider.value = currentHunger / maxHunger;
         thirstSlider.value = currentThirst / maxThirst;
         healthSlider.value = currentHealth / maxHealth;
+    }
+
+    // New method to handle damage from zombies
+    public void TakeDamageFromZombie(int damageAmount)
+    {
+        DecreaseHealth(damageAmount);
     }
 }
