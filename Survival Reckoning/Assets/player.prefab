@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3102463637484294295}
   - component: {fileID: 5456132550790192105}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3847418507177494990}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2406146879453219038}
   - component: {fileID: 4966500487650714285}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Slider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 1852519581934477893}
   - component: {fileID: 3064152500468159669}
   - component: {fileID: 4775348887418051140}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 539190138944558841}
   - component: {fileID: 1042998773174139778}
   - component: {fileID: 7755950733963884362}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3911250847301722277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 7669257588772554767}
   - component: {fileID: 5523646400377260649}
   - component: {fileID: 2937075021042983564}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 41052819550397727}
   - component: {fileID: 8241346759830253798}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Slider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 7507608743139904198}
   - component: {fileID: 2964137495541496687}
   - component: {fileID: 2045510883840268991}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,7 +648,7 @@ GameObject:
   - component: {fileID: 5060015391630975552}
   - component: {fileID: 6032047988978511771}
   - component: {fileID: 6043071520304536542}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2172258129061515000}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   - component: {fileID: 9055942065748431494}
   - component: {fileID: 3777321978730233073}
   - component: {fileID: 873367519084730310}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +837,7 @@ GameObject:
   - component: {fileID: 7697886893870443927}
   - component: {fileID: 8769947512418272667}
   - component: {fileID: 2555738227174944627}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -970,8 +970,8 @@ MonoBehaviour:
   waterSlider: {fileID: 5456132550790192105}
   foodSlider: {fileID: 4966500487650714285}
   healthDegradeRate: 1
-  waterDegradeRate: 0.5
-  foodDegradeRate: 0.3
+  waterDegradeRate: 0.1
+  foodDegradeRate: 0.1
   damageCooldown: 0.3
   zombieDetectionRadius: 1
 --- !u!1 &5488463095997364343
@@ -983,7 +983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3602835665585407008}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 3892157941585498507}
   - component: {fileID: 8196597873864806913}
   - component: {fileID: 1553538751468092272}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1125,7 +1125,7 @@ GameObject:
   - component: {fileID: 9203620897932983586}
   - component: {fileID: 7526028034515603990}
   - component: {fileID: 6900739375602613777}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1198,7 +1198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3745985590592948797}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1236,7 +1236,7 @@ GameObject:
   - component: {fileID: 1049458323563094392}
   - component: {fileID: 4866467759658933647}
   - component: {fileID: 4658796519466803789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 5917648070425635048}
   - component: {fileID: 2605984205587254279}
   - component: {fileID: 6904612661078234648}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1402,7 +1402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8866047923201751516}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1441,7 +1441,7 @@ GameObject:
   - component: {fileID: 502134544261233674}
   - component: {fileID: 7370977090784128874}
   - component: {fileID: 6805441998560229976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1546,7 +1546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3617307958966978916}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1584,7 +1584,7 @@ GameObject:
   - component: {fileID: 5938295572485048743}
   - component: {fileID: 904077361330456835}
   - component: {fileID: 7593646066246963815}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
