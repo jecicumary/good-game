@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
       propertyPath: m_LocalScale.x
-      value: -10.541159
+      value: -4.1123166
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
       propertyPath: m_LocalScale.y
-      value: -10.541159
+      value: -4.1123166
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
       propertyPath: m_LocalScale.z
-      value: -12.978721
+      value: -5.0632586
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 41.192
+      value: 41.206
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -71,6 +71,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1524581762148261098}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7194812066467043153}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6551539426511509700}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2422819011607090980}
   m_SourcePrefab: {fileID: 100100000, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
 --- !u!1 &2251107126033705807 stripped
 GameObject:
@@ -92,3 +101,74 @@ MonoBehaviour:
   healthBonus: 25
   waterBonus: 0
   foodBonus: 0
+--- !u!64 &7194812066467043153
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251107126033705807}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 72
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7387706064836869012, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
+--- !u!64 &6551539426511509700
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251107126033705807}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 72
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7387706064836869012, guid: a27009bbcdea8134d8e0ae1ca94d47ab, type: 3}
+--- !u!54 &-2422819011607090980
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251107126033705807}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 72
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
