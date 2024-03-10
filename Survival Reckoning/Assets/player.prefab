@@ -929,6 +929,7 @@ MonoBehaviour:
   playerCamera: {fileID: 4866467759658933647}
   walkSpeed: 6
   runSpeed: 12
+  crouchSpeed: 3
   jumpPower: 7
   gravity: 10
   lookSpeed: 2
